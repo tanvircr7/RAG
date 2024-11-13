@@ -1,9 +1,14 @@
-Retrieval Augmented Generation
+# Retrieval-Augmented Generation (RAG)
 
-Done on pdfs, documents and text files
+**Purpose:** Perform RAG on PDFs, documents, and text files using a vector database.
 
-Vector Database: Pinecone
+---
 
-To run this:
-Get OPENAI API KEY from playground
-GET Pinecone API KEY
+## Requirements
+
+- **Vector Database:** [Pinecone](https://www.pinecone.io/)
+- **API Keys Needed:**
+  - **OpenAI API Key:** Obtain from the [OpenAI Playground](https://platform.openai.com/playground)
+  - **Pinecone API Key:** Obtain from [Pinecone](https://app.pinecone.io/)
+
+---
