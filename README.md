@@ -14,6 +14,7 @@ To run this application, ensure you have the following:
 ## Setup Instructions
 
 ### 1. Clone the Repository
-```bash
-git clone <your-repository-url>
-cd QA
+
+### 2. Create the python virtual environment and activate it
+
+### 3. Run the streamlit app.py file
