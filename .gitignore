@@ -1,0 +1,26 @@
+# Python-related files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Streamlit-specific
+.streamlit/
+
+# Logs and cache files
+*.log
+*.cache
+*.sqlite3
+*.db
+
+# VSCode workspace files
+.vscode/
+
+# Temporary or OS-specific files
+.DS_Store
+Thumbs.db
