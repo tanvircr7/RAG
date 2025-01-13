@@ -87,7 +87,7 @@ if __name__ == "__main__":
 
                 # writing the file from RAM to the current directory on disk
                 bytes_data = uploaded_file.read()
-                file_name = os.path.join('..', 'database', 'input_files', uploaded_file.name)
+                file_name = os.path.join('database', 'input_files', uploaded_file.name)
                 with open(file_name, 'wb') as f:
                     f.write(bytes_data)
 
