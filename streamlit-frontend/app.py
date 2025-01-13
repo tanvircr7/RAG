@@ -88,6 +88,10 @@ if __name__ == "__main__":
                 # writing the file from RAM to the current directory on disk
                 bytes_data = uploaded_file.read()
                 file_name = os.path.join('database', 'input_files', uploaded_file.name)
+
+                # Create the necessary directories if they do not exist
+                os.makedirs(os.path.dirname(file_name), exist_ok=True)
+                
                 with open(file_name, 'wb') as f:
                     f.write(bytes_data)
 
