@@ -1,5 +1,5 @@
 # QA Streamlit Application
-Live at: [https://github.com/tanvircr7/RAG](https://tanvircr7-rag-openai-pinecone.streamlit.app/)
+Live at: [RAG](https://tanvircr7-rag-openai-pinecone.streamlit.app/)
 
 This is a QA (Question Answering) application built using Streamlit. It uses OpenAI's API and Pinecone for vector-based search and storage.
 
