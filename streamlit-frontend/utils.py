@@ -14,7 +14,7 @@ def load_document(file):
     print(f"File name: {name}, File extension: {extension}")  # Print file name and extension
 
     if extension == '.pdf':
-        from langchain.document_loaders import PyPDFLoader
+        from langchain_community.document_loaders import PyPDFLoader
         print(f"Loading PDF file: {file}")  # Indicate that the PDF loader is being used
         loader = PyPDFLoader(file)
     elif extension == '.docx':

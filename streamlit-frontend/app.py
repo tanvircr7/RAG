@@ -113,13 +113,11 @@ if __name__ == "__main__":
                 delete_pinecone_index()
 
                 try: 
-                    print('1')
                     vector_store = insert_or_fetch_embeddings('askadocument', docs)
-                    print('w')
 
                     # saving the vector store in the streamlit session state (to be persistent between reruns)
                     st.session_state.vs = vector_store
-                    print('w3')
+
 
                     st.success('File uploaded and embedded successfully.')
                 except Exception as e:
@@ -156,7 +154,7 @@ if __name__ == "__main__":
             # the current question and answer
             # the current question and answer
             # value = f'Q: {q} {" " * 5} \nA: {answer['result']}'
-            value = f'Q: {q} {" " * 5} \nA: {answer['answer']}'
+            value = f"Q: {q} {' ' * 5} \nA: {answer['answer']}"
 
             st.session_state.history = f'{value} \n {"-" * 100} \n {st.session_state.history}'
             h = st.session_state.history

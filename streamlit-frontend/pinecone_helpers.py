@@ -69,7 +69,7 @@ def insert_or_fetch_embeddings(index_name, docs):
   vector_store = PineconeVectorStore(index=index, embedding=embeddings) # Initialize with the index and embedding
   uuids = [str(uuid4()) for _ in range(len(docs))]
   vector_store.add_documents(docs, ids=uuids)
-  print('Ok')
+#   print('Ok')
   return vector_store
 
 
@@ -82,8 +82,8 @@ def delete_pinecone_index(index_name='all'):
         print('Deleting all indexes ... ')
         for index in indexes:
             pc.delete_index(index)
-        print('Ok')
+        # print('Ok')
     else:
         print(f'Deleting index {index_name} ...', end='')
         pc.delete_index(index_name)
-        print('Ok')
+        # print('Ok')
