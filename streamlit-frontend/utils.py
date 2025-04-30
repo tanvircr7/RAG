@@ -107,10 +107,15 @@ def convert_chunks_to_documents(chunks, metadata=None):
 
 
 def ask_and_get_answer(vector_store, q, k=10):
+  from langchain.cache import SimpleCache
   from langchain.chains import RetrievalQA
   from langchain_openai import ChatOpenAI
 
-  llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=1, api_key=get_openai_apikey())
+  # Define a simple caching mechanism
+  cache = SimpleCache()
+
+  llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=1, api_key=get_openai_apikey(), cache=cache)
+  llm.model_rebuild()
 
   retriever = vector_store.as_retriever(search_type='similarity', search_kwargs={'k': k})
 
