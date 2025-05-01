@@ -141,9 +141,13 @@ def ask_questions_with_memory(vector_store, q, k):
     from langchain_openai import ChatOpenAI
     from langchain.chains import ConversationalRetrievalChain  # Import class for building conversational AI chains
     from langchain.memory import ConversationBufferMemory  # Import memory for storing conversation history
+    from langchain.cache import InMemoryCache
 
-    # Instantiate a ChatGPT LLM (temperature controls randomness)
-    llm = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0.2, api_key=get_openai_apikey())
+    # Define a simple caching mechanism
+    cache = InMemoryCache()
+
+    llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=1, api_key=get_openai_apikey(), cache=cache)
+    llm.model_rebuild()
 
     # Configure vector store to act as a retriever (finding similar items, returning top 12)
     retriever = vector_store.as_retriever(search_type='similarity', search_kwargs={'k': k})
